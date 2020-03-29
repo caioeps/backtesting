@@ -27,5 +27,5 @@ This project relies on:
 
 ## TODO
 
-- [] Show stats in the end of the run using `pyfolio`.
-- [] Improve Landry's strategy.
+- [ ] Show stats in the end of the run using `pyfolio`.
+- [ ] Improve Landry's strategy.
