@@ -1,3 +1,5 @@
+import math
+
 from backtrader import Strategy, indicators, Order
 
 class Landry(Strategy):
@@ -31,10 +33,13 @@ class Landry(Strategy):
         stop_loss = self.data.low - 0.01
         stop_gain = self.data.high + risk * self.p.risk_factor
 
+        size = 200
+
         print("Placing buyer order at $ %.2f" % enter_at)
 
         mainside = self.buy(price=enter_at,
                             exectype=Order.Limit,
+                            size=size,
                             transmit=False)
         lowside  = self.sell(price=stop_loss,
                              size=mainside.size,

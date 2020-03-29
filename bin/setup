@@ -3,6 +3,13 @@ set -e
 pip3 install backtrader
 pip3 install matplotlib
 pip3 install requests
-pip3 install pyfolio
 
 sudo apt-get install python3-tk
+
+# @see https://github.com/quantopian/pyfolio
+pip3 install pyfolio
+pip3 install theano
+pip3 install pymc3
+# @see https://github.com/quantopian/pyfolio/issues/520
+pip3 install empyrical==0.3.4
+

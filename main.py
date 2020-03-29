@@ -31,17 +31,15 @@ data0 = backtrader.feeds.YahooFinanceCSVData(
 cerebro.adddata(data0)
 
 strats = cerebro.run()
+strat = strats[0]
 
 if getenv('NOSTATS') != 'true':
-    pyfoliozer = strats.analyzers.getbyname('pyfolio')
+    pyfoliozer = strat.analyzers.getbyname('pyfolio')
     returns, positions, transactions, gross_lev = pyfoliozer.get_pf_items()
     pyfolio.create_full_tear_sheet(
             returns,
             positions=positions,
-            transactions=transactions,
-            gross_lev=gross_lev,
-            live_start_date='2005-05-01',  # This date is sample specific
-            round_trips=True)
+            transactions=transactions)
 
 
 if getenv('NOPLOT') != 'true':
