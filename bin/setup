@@ -1,0 +1,8 @@
+set -e
+
+pip3 install backtrader
+pip3 install matplotlib
+pip3 install requests
+pip3 install pyfolio
+
+sudo apt-get install python3-tk
