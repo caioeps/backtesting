@@ -29,9 +29,10 @@ cerebro.addanalyzer(backtrader.analyzers.PyFolio, _name='pyfolio')
 cerebro.addstrategy(strategy_mapping.get(getenv('STRATEGY')))
 
 data0 = backtrader.feeds.YahooFinanceCSVData(
-            dataname=get_yahoo_data('BBAS3.SA.weekly.csv'),
+            dataname=get_yahoo_data('CSNA3.SA.weekly.csv'),
             fromdate=datetime(2015, 1, 1),
             todate=datetime(2020, 3, 20),
+            timeframe=backtrader.TimeFrame.Weeks
         )
 data0.plotinfo.plotlog = True
 data0.plotinfo.plotylimited = True
